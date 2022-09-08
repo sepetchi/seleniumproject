@@ -35,6 +35,8 @@ public class T5_checkboxes {
             System.out.println("checkbox1 is selected");
             }else {
                 System.out.println("checkbox2 is not selected");
+
+
             }
         }
     }
