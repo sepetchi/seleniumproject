@@ -1,5 +1,6 @@
 package com.cydeo.tests.day7_webtables_utilities_javafaker;
 
+import com.cydeo.tests.base.TestBase;
 import com.cydeo.tests.utilities.BrowserUtils;
 import com.cydeo.tests.utilities.CRM_Utilities;
 import com.cydeo.tests.utilities.WebDriverFactory;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 
-public class T3_CRM_LOGIN {
+public class T3_CRM_LOGIN extends TestBase {
     public WebDriver driver;
     @BeforeMethod
     public void setupMethod(){
@@ -53,7 +54,22 @@ public class T3_CRM_LOGIN {
         driver.get("http://login1.nextbasecrm.com/");
 
         //Calling my utility method to login helpdesk1
-        CRM_Utilities.crm_login(driver);
+        CRM_Utilities.crm_login(driver, "helpdesk2@cybertekschool.com", "UserUser" );
+
+        //6. Verify title is as expected:
+        //Expected: Portal
+        BrowserUtils.verifyTitle(driver,"Portal");
+
+    }
+    @Test
+    public void crm_login_test3(){
+        //TC #3: Login scenario
+        // 1. Create new test and make set ups
+        //2. Go to : http://login1.nextbasecrm.com/
+        driver.get("http://login1.nextbasecrm.com/");
+
+        //Calling my utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver,"helpdesk2@cybertekschool.com","UserUser");
 
         //6. Verify title is as expected:
         //Expected: Portal

@@ -18,7 +18,7 @@ public class day5_meetingPracticeTask3 {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //2. Go to https://practice.cydeo.com/radio_buttons
 
-        driver.get("https://practice.cydeo.com/radio_buttons");
+        driver.get("https://practice.cydeo.com/javascript_alerts");
 
 
         WebElement hockeyButton = driver.findElement(By.xpath("//input[@id='hockey']"));
